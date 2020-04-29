@@ -27,7 +27,7 @@ const Cards: React.FunctionComponent<ICardsProps> = (props) => {
 								<CountUp
 									start={0}
 									end={props.data.confirmed.value}
-									duration={2.5}
+									duration={2}
 									separator=","
 								/>
 							</Typography>
