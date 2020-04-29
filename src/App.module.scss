@@ -1,7 +1,3 @@
-body {
-	background-color: rgb(250, 250, 250);
-}
-
 .container {
 	display: flex;
 	align-items: center;
@@ -11,4 +7,28 @@ body {
 
 .spinnerAlign {
 	margin-top: 50px;
+}
+
+h2 {
+	font-size: 50px;
+	font-family: "WorkSans";
+	letter-spacing: 0.05em;
+	margin: 20px 0;
+
+	.space {
+		display: inline-block;
+		width: 65px;
+		height: 65px;
+	}
+
+	.img {
+		background-image: url('./assets/coronavirus.png');
+		background-size: 64px 64px;
+		background-repeat: no-repeat;
+		display: inline-block;
+		width: 64px;
+		height: 64px;
+		position: absolute;
+		margin-top: 15px;
+	}
 }

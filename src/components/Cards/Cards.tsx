@@ -12,8 +12,6 @@ interface ICardsProps {
 }
 
 const Cards: React.FunctionComponent<ICardsProps> = (props) => {
-
-	console.log(props.data);
 	
 	return (
 		<div className={styles.container}>

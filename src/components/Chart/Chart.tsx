@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Statistic, CityDetail } from '../../api';
-import { Line, Bar } from "react-chartjs-2";
+import { CityDetail } from '../../api';
+import { Line } from "react-chartjs-2";
 
 import styles from './Chart.module.scss';
 import { COLORS } from '../../api/colors';
@@ -63,7 +63,7 @@ const Chart: React.FunctionComponent<IChartProps> = (props) => {
 	}
 
 	//const [dates, cases] = getInfo();
-	
+
 	const lineChart = (
 		<Line
 			data={{
@@ -72,6 +72,16 @@ const Chart: React.FunctionComponent<IChartProps> = (props) => {
 			}}
 
 			options={{
+				legend: {
+					display: true,
+					rtl: true,
+					labels: {
+						fontSize: 12,
+						usePointStyle: true,
+						padding: 18
+					},
+					position: 'right'
+				},
 				elements: {
 					point: {
 						pointStyle: 'circle'
@@ -79,6 +89,7 @@ const Chart: React.FunctionComponent<IChartProps> = (props) => {
 				},
 				scales: {
 					xAxes: [{
+						type: 'category',
 						display: true,
 						gridLines: {
 							drawTicks: false,
@@ -93,14 +104,37 @@ const Chart: React.FunctionComponent<IChartProps> = (props) => {
 						display: true,
 						scaleLabel: {
 							display: true,
-							labelString: 'Cases'
+							labelString: 'Infecteds'
 						},
 						ticks: {
 							padding: 10
 						}
 					}]
 				},
-					
+				title: {
+					display: true,
+					fontFamily: 'WorkSans',
+					text: 'Corona Total Infecteds by City',
+					fontSize: 28,
+					fontColor: "#000",
+					padding: 40
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+					custom: (tooltipModel: any) => {
+						tooltipModel.y = 0;
+					},
+					callbacks: {
+						title: function(tooltipItems: any, data: any) {
+							return data.datasets[tooltipItems[0].datasetIndex].data[tooltipItems[0].index].x;
+						}
+					},
+					titleAlign: 'center',
+					bodyAlign: 'right',
+					bodySpacing: 3,
+					xPadding: 10
+				}
 			}}
 		/>
 	);
