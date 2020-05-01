@@ -1,4 +1,4 @@
-# React Corvid 19 Tracker
+# React Covid-19 Tracker
 
 A React JS application to Track Corona infected people using Material UI and Chart JS
 

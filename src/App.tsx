@@ -24,7 +24,7 @@ export default class App extends React.Component<{}, IAppState> {
 	public render() {
 		return (
 			<div className={styles.container}>
-				<h2>C<div className={styles.space}><div className={styles.img}></div></div>rvid-19 Statistics</h2>
+				<h2>C<div className={styles.space}><div className={styles.img}></div></div>vid-19 Statistics</h2>
 				{this.state && this.state.globalData && this.state.dailyData ? 
 					<React.Fragment>
 						<Cards data={this.state.globalData} />
